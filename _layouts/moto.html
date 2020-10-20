@@ -4,17 +4,18 @@ layout: default
 {{ content }}
 
 {% for file in site.static_files %}
-{% if file.path contains page.url %}
-{% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}
-{% assign filenameparts = file.path | split: "/" %}
-{% assign filename = filenameparts | last | replace: file.extname,"" %}
-<li>
-    <h3>{{ filenameparts[3] }}</h3>
-    <a href="{{ file.path | relative_url }}" title="{{ filename }}">
-        <img src="{{ file.path | relative_url }}" alt="{{ filename }}"
-             title="{{ filename }}" width="300"/>
-    </a>
-</li>
-{% endif %}
-{% endif %}
+    {% if file.path contains page.url %}
+    {% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}
+    {% assign filenameparts = file.path | split: "/" %}
+    {% assign filename = filenameparts | last | replace: file.extname,"" %}
+    {% assign album_name = filenameparts[3] %}
+    <li>
+        <h3>{{ album_name }}</h3>
+        <a href="{{ file.path | relative_url }}" title="{{ filename }}">
+            <img src="{{ file.path | relative_url }}" alt="{{ filename }}"
+                 title="{{ filename }}" width="300"/>
+        </a>
+    </li>
+    {% endif %}
+    {% endif %}
 {% endfor %}
