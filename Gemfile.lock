@@ -274,6 +274,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-optional-front-matter
+  jekyll-titles-from-headings
   rubocop
   rubocop-jekyll
   rubocop-performance

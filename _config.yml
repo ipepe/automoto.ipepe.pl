@@ -1,0 +1,16 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://moto.ipepe.pl" # the base hostname & protocol for your site, e.g. http://example.com
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+
+exclude:
+  - .idea/
+  - Gemfile
+  - Gemfile.lock
+
+collections:
+  motos:
+    output: true
+    permalink: moto/:path/
