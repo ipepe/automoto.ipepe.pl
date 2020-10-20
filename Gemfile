@@ -6,7 +6,8 @@ gem 'github-pages'
 gem 'jekyll-optional-front-matter'
 gem 'jekyll-titles-from-headings'
 
-group :development do
+group :development, :test do
+  gem 'html-proofer'
   gem 'rubocop'
   gem 'rubocop-jekyll'
   gem 'rubocop-performance'
